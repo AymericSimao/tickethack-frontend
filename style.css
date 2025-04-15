@@ -51,19 +51,19 @@ body {
   padding: 20px;
 }
 
-#content-right {
-  grid-row-start: 5;
-  grid-row-end: 11;
-  grid-column-start: 8;
-  grid-column-end: 11;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: white;
-  border-radius: 20px;
-  padding: 20px;
-  overflow: auto;
+#content-right{
+    grid-row-start: 5;
+    grid-row-end: 11;
+    grid-column-start: 8;
+    grid-column-end: 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    overflow: auto;
+    padding: 10px;
 }
 
 #title-logo {
@@ -96,20 +96,20 @@ body {
 }
 
 #content-right > img {
-  width: 50%;
-  height: 50%;
-  text-align: center;
+    width: 50%;
+    height: 50%;
 }
 
-.trip {
-  background-color: gainsboro;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 5px;
-  border-radius: 10px;
-  font-size: 12px;
-  margin-top: 20px;
+.trip{
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .trip > p {
   margin-right: 10px;
