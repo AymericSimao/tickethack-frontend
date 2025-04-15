@@ -61,8 +61,8 @@ body{
     align-items: center;
     background-color: white;
     border-radius: 20px;
-    padding: 20px;
     overflow: auto;
+    padding: 10px;
 }
 
 #title-logo{
@@ -97,7 +97,6 @@ body{
 #content-right > img {
     width: 50%;
     height: 50%;
-    text-align: center;
 }
 
 .trip{
@@ -108,7 +107,8 @@ body{
     padding: 2px 5px;
     border-radius: 10px;
     font-size: 12px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .trip > p{
     margin-right: 10px;
