@@ -96,6 +96,24 @@ body{
 #content-right > img {
     width: 50%;
     height: 50%;
+    text-align: center;
+}
+
+.trip{
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+.trip > p{
+    margin-right: 10px;
+}
+.trip > input{
+    background-color: green;
+    margin: 5px;
 }
 
 h1{
