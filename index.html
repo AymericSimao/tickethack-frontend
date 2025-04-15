@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TicketHack</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container">
+      <div id="header">
+        <h2 id="title-logo">TicketHack</h2>
+        <div id="onglets">
+          <a href="cart.html">Cart</a>
+          <a href="bookings.html">Bookings</a>
+        </div>
+      </div>
 
-        <div id="header">
-            <h2 id="title-logo">TicketHack</h2>
-            <div id="onglets">
-                <a href="cart.html">Cart</a>
-                <a href="bookings.html">Bookings</a>
-            </div>
+      <div id="intro">
+        <h1>Explore the world effortlessly by train!</h1>
+        <h2>
+          Compare, book and enjoy cheap prices for train tickets: your journey
+          start on TicketHack
+        </h2>
+      </div>
+      <div id="content-left">
+        <div id="destination">
+          <input
+            id="departure"
+            class="pointer"
+            type="text"
+            ,
+            value="Bruxelles"
+          />
+          <hr color="#000000" width="90%" size="1px" />
+          <input id="arrival" class="pointer" type="text" value="Marseille" />
         </div>
-
-        <div id="intro">
-            <h1>Explore the world effortlessly by train!</h1>
-            <h2>Compare, book and enjoy cheap prices for train tickets: your journey start on TicketHack</h2>
-        </div>
-        <div id="content-left">
-            <div id="destination">
-                <input id="departure" class="pointer" type="text", value="Bruxelles">
-                <hr color="#000000" width="90%" size="1px">
-                <input id="arrival" class="pointer" type="text" value="Marseille">
-            </div>
-            <input class="pointer" id="date" type="date" value="2025-04-23">
-            <input class="pointer" id="btn-search" type="button" value="Search">
-        </div>
-        <div id="content-right">
-            <div id="right-beforeSearching">
-                <img src="./images/train.png" alt="train">
-                <hr color="#12aa12" width="100%">
-                <p>It's time to book your future trip.</p>
-                <!-- <div class="trip">
+        <input class="pointer" id="date" type="date" value="2025-04-23" />
+        <input class="pointer" id="btn-search" type="button" value="Search" />
+      </div>
+      <div id="content-right">
+        <div id="right-beforeSearching">
+          <img src="./images/train.png" alt="train" />
+          <hr color="#12aa12" width="100%" />
+          <p>It's time to book your future trip.</p>
+          <!-- <div class="trip">
                     <p>Paris > Lyon</p>
                     <p>00:00</p>
                     <p>999€</p>
                     <input type="button" value="Book">
                 </div> -->
-            </div>
         </div>
+      </div>
     </div>
-    
 
-    <script src="script.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
