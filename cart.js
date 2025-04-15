@@ -21,6 +21,15 @@ async function initiateNewCart() {
     });
 }
 
+function loadCart(cartId) {
+  fetch(`${BACKEND_URL}/carts/${cartId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      
+    });
+}
+
 async function initiateView() {
   if (getCookie("cartId")) {
     cartId = getCookie("cartId");
@@ -30,11 +39,7 @@ async function initiateView() {
     cartId = await initiateNewCart();
   }
 
-  fetch(`${BACKEND_URL}/carts/${cartId}`)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    });
+  loadCart(cartId);
 }
 
 initiateView();
