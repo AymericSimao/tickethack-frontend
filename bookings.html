@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookings TicketHack</title>
-</head>
-<body>
-    <h1>Bookings TicketHack</h1>
-    
-</body>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicketHack Bookings</title>
+  </head>
+  <body>
+    <div id="cart-container" class="container">
+      <div id="header">
+        <a href="index.html" style="text-decoration: none"
+          ><h2 id="title-logo" href="index.html" class="pointer">
+            TicketHack
+          </h2></a
+        >
+        <div id="onglets">
+          <a href="cart.html">Cart</a>
+          <a href="bookings.html">Bookings</a>
+        </div>
+      </div>
+
+      <div id="booking-content">
+        <!-- <p>No booking yet. <br><br> Why not plan a trip?</p> -->
+        <div id="booking-elements">
+            <h2>My bookings</h2>
+          <div class="booking-trip">
+            <p>departure > arrival</p>
+            <p>20:12</p>
+            <p>53€</p>
+            <p id="time-before">Departure in 5 hours</p>
+          </div>
+          
+          <hr width="30%" size="2px" color="black">
+          <p id="enjoy">Enjoy your travel with TicketHack</p>
+        </div>
+        
+      </div>
+    </div>
+
+    <script src="cart.js"></script>
+  </body>
 </html>
