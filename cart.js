@@ -22,14 +22,10 @@ function formatDate(dateObject) {
   return `${years}-${months}-${days} ${hours}:${minutes}`;
 }
 
-function initiateNewCart() {
-  fetch(`${BACKEND_URL}/carts/new`)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      document.cookie = `cartId=${data.cart._id};`;
-      return data.cart._id;
-    });
+async function initiateNewCart() {
+  let response = await fetch(`${BACKEND_URL}/carts/new`);
+  let data = await response.json();
+  return data.cart._id;
 }
 
 function loadCart(cartId) {
@@ -53,7 +49,6 @@ function loadCart(cartId) {
               return t;
             })
             .sort((a, b) => a.date - b.date);
-          console.log(trips);
           for (let trip of trips) {
             document.querySelector("#cart-elements").innerHTML += `
           <div class="cart-trip" data-tripid=${trip._id}>
@@ -78,20 +73,18 @@ function loadCart(cartId) {
     });
 }
 
-function initiateView() {
+async function initiateView() {
   if (getCookie("cartId")) {
     cartId = getCookie("cartId");
     console.log(`a cartId exists: ${cartId}`);
     loadCart(cartId);
   } else {
     console.log(`No cartId found. Initiating a new one`);
-    initiateNewCart()
-      .then((data) => (cartId = data))
-      .then(loadCart(cartId));
+    cartId = await initiateNewCart();
+    document.cookie = `cartId=${data.cart._id};`;
+    loadCart(cartId);
   }
 }
-
-initiateView();
 
 document
   .querySelector("#cart-elements")
@@ -110,7 +103,6 @@ document
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           if (data.result) {
             console.log(data.message);
             loadCart(cartId);
@@ -136,17 +128,14 @@ document
         }),
       })
         .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
+        .then(async (data) => {
           if (data.result) {
             // redirect to Bookings
             console.log(data.message);
             // get new cart
-            initiateNewCart()
-              .then((data) => (cartId = data))
-              .then(loadCart(cartId));
-            // redirect to bookings
-            //window.location.href = "bookings.html";
+            cartId = await initiateNewCart();
+            document.cookie = `cartId=${cartId};`;
+            window.location.href = "bookings.html";
           } else {
             console.log(data.message);
             alert(`Failed to purchase Cart ${cartId}}`);
@@ -154,3 +143,5 @@ document
         });
     }
   });
+
+initiateView();
