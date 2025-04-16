@@ -479,9 +479,10 @@ select {
   }
   
   #content-right > img {
-    width: 50%;
-    height: 50%;
-    margin: 20px;
+    display: none;
+  }
+  #train{
+    display: none;
   }
   
   #content-right > hr {
