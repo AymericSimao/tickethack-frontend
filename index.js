@@ -12,12 +12,25 @@ function getCookie(key) {
 }
 
 async function initiateNewCart() {
-  fetch(`${BACKEND_URL}/carts/new`)
+  let response = await fetch(`${BACKEND_URL}/carts/new`);
+  let data = await response.json();
+  return data.cart._id;
+}
+
+function refreshCartVignette() {
+  fetch(`${BACKEND_URL}/carts/count/${cartId}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      document.cookie = `cartId=${data.cart._id};`;
-      return data.cart._id;
+      if (data.result) {
+        document.querySelector("#trip-count").textContent = data.tripCount;
+        if (data.tripCount === 0) {
+          document.querySelector("#trip-count").style.display = "none";
+        } else {
+          document.querySelector("#trip-count").style.display = "flex";
+        }
+      } else {
+        console.log(`Not able to get tripcount for Cart ${cartId}`);
+      }
     });
 }
 
@@ -28,7 +41,10 @@ async function initiateView() {
   } else {
     console.log(`No cartId found. Initiating a new one`);
     cartId = await initiateNewCart();
+    document.cookie = `cartId=${cartId};`;
   }
+  // Load cart vignette
+  refreshCartVignette();
   // Load city lists
   fetch(`${BACKEND_URL}/trips/city`)
     .then((response) => response.json())
@@ -78,7 +94,9 @@ document.querySelector("#btn-search").addEventListener("click", function () {
           document.querySelector("#content-right").innerHTML += `
                 <div class="trip">
                     <p>${data.trips[i].departure} > ${data.trips[i].arrival}</p>
-                    <p>${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}</p>
+                    <p>${String(hours).padStart(2, "0")}:${String(
+            minutes
+          ).padStart(2, "0")}</p>
                     <p>${data.trips[i].price}€</p>
                     <input class="pointer" type="button" value="Book" data-tripid=${
                       data.trips[i]._id
@@ -126,6 +144,3 @@ document
         });
     }
   });
-
-
-  
