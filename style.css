@@ -13,17 +13,17 @@ input[type="button"] {
   padding: 10px;
 }
 
-#container {
+.container {
   height: 100vh;
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
-  background-image: url("./images/background.jpg");
   background-position: center;
   background-size: cover;
 }
 
+/* HEADER STYLE */
 #header {
   grid-row-start: 1;
   grid-row-end: 2;
@@ -32,6 +32,30 @@ input[type="button"] {
   display: flex;
   justify-content: space-between;
   background-color: white;
+}
+
+#title-logo {
+  font-size: 30px;
+  color: rgb(18, 131, 18);
+  margin-left: 10px;
+}
+
+#onglets {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+#onglets > a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* INDEX STYLE */
+
+#index-container {
+  background-image: url("./images/background.jpg");
 }
 
 #intro {
@@ -72,24 +96,6 @@ input[type="button"] {
   border-radius: 20px;
   overflow: auto;
   padding: 10px;
-}
-
-#title-logo {
-  font-size: 30px;
-  color: rgb(18, 131, 18);
-  margin-left: 10px;
-}
-
-#onglets {
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-}
-
-#onglets > a {
-  margin-right: 20px;
-  text-decoration: none;
-  color: black;
 }
 
 #destination {
@@ -153,7 +159,7 @@ input {
 }
 
 /* CART STYLE */
-#cart-container {
+#cart-content {
   grid-row-start: 4;
   grid-row-end: 11;
   grid-column-start: 3;
@@ -204,8 +210,6 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-
   background-color: rgb(224, 220, 214);
   border-radius: 5px;
   height: 50px;
