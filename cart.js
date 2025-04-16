@@ -28,12 +28,30 @@ async function initiateNewCart() {
   return data.cart._id;
 }
 
+function refreshCartVignette() {
+  fetch(`${BACKEND_URL}/carts/count/${cartId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.result) {
+        document.querySelector("#trip-count").textContent = data.tripCount;
+        if (data.tripCount === 0) {
+          document.querySelector("#trip-count").style.display = "none";
+        } else {
+          document.querySelector("#trip-count").style.display = "flex";
+        }
+      } else {
+        console.log(`Not able to get tripcount for Cart ${cartId}`);
+      }
+    });
+}
+
 function loadCart(cartId) {
   fetch(`${BACKEND_URL}/carts/${cartId}`)
     .then((response) => response.json())
     .then((data) => {
       if (data.result) {
         document.querySelector("#cart-elements").innerHTML = "";
+        refreshCartVignette();
         trips = data.cart.trips;
         tripCount = trips.length;
         if (tripCount === 0) {
