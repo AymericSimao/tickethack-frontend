@@ -37,7 +37,7 @@ async function initiateView() {
       // Departure
       document.querySelector(
         "#departure"
-      ).innerHTML = `<option value="--">--</option>`;
+      ).innerHTML = `<option value="--">-Departure-</option>`;
       for (city of data.departure) {
         document.querySelector(
           "#departure"
@@ -46,7 +46,7 @@ async function initiateView() {
       // Arrival
       document.querySelector(
         "#arrival"
-      ).innerHTML = `<option value="--">--</option>`;
+      ).innerHTML = `<option value="--">-Arrival-</option>`;
       for (city of data.arrival) {
         document.querySelector(
           "#arrival"
@@ -80,9 +80,7 @@ document.querySelector("#btn-search").addEventListener("click", function () {
                     <p>${data.trips[i].departure} > ${data.trips[i].arrival}</p>
                     <p>${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}</p>
                     <p>${data.trips[i].price}€</p>
-                    <input class="pointer" type="button" value="Book" data-tripid=${
-                      data.trips[i]._id
-                    }>
+                    <input class="pointer" type="button" value="Book" data-tripid=${data.trips[i]._id}>
                 </div>`;
         }
       } else {
