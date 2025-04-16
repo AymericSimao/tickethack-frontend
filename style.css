@@ -73,7 +73,7 @@ input[type="button"] {
   color: white;
   height: 1rem;
   width: 1rem;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -297,7 +297,7 @@ select {
   padding: 5px 20px;
 }
 
-.dep-arr{
+.dep-arr {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
@@ -306,20 +306,20 @@ select {
   justify-content: center;
 }
 
-.dep-date{
+.dep-date {
   grid-column-start: 4;
   grid-column-end: 7;
   display: flex;
   justify-content: center;
 }
-.before{
+.before {
   grid-column-start: 7;
   grid-column-end: 10;
   display: flex;
   justify-content: center;
 }
 
-#yet{
+#yet {
   display: flex;
   justify-content: center;
   align-items: center;
