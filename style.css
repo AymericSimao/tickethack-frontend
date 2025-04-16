@@ -227,8 +227,8 @@ input {
   grid-column-end: 11;
   background-color: white;
   border-radius: 20px;
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  display: flex;
+  flex-direction: column;
 }
 #booking-elements {
   grid-row-start: 1;
@@ -240,7 +240,8 @@ input {
   overflow: auto;
 }
 
-.booking-trip {
+/* TEST pour centrer dans chaque trip les éléments en grid */
+/* .booking-trip {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -250,6 +251,41 @@ input {
   width: 80%;
   margin: 5px;
   padding: 5px 20px;
+} */
+.booking-trip {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  background-color: rgb(224, 220, 214);
+  border-radius: 5px;
+  height: 50px;
+  width: 80%;
+  margin: 5px;
+  padding: 5px 20px;
+}
+
+.dep-arr{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  display: flex;
+  justify-content: center;
+}
+
+.dep-date{
+  grid-column-start: 4;
+  grid-column-end: 7;
+  display: flex;
+  justify-content: center;
+}
+.before{
+  grid-column-start: 7;
+  grid-column-end: 10;
+  display: flex;
+  justify-content: center;
 }
 
 #yet{
@@ -261,4 +297,8 @@ input {
 
 #enjoy{
   color: green;
+}
+
+.booking-departure{
+  color: red;
 }
