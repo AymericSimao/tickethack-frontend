@@ -154,7 +154,7 @@ input {
 
 /* CART STYLE */
 #cart-container {
-  grid-row-start: 5;
+  grid-row-start: 4;
   grid-row-end: 11;
   grid-column-start: 3;
   grid-column-end: 11;
@@ -205,10 +205,11 @@ input {
   justify-content: space-between;
   align-items: center;
 
+
   background-color: rgb(224, 220, 214);
   border-radius: 5px;
   height: 50px;
   width: 80%;
   margin: 5px;
-  padding: 5px;
+  padding: 5px 20px;
 }
