@@ -142,6 +142,10 @@ a#title {
   justify-content: center;
 }
 
+#destination > hr {
+  margin: 5px;
+}
+
 #date {
   display: flex;
   align-items: center;
@@ -158,7 +162,7 @@ a#title {
 }
 
 .trip {
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(224, 220, 214);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,7 +192,7 @@ h1 {
 
 input,
 select {
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(224, 220, 214);
   border-radius: 10px;
   border: none;
   padding: 10px;
