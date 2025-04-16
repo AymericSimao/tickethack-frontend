@@ -104,3 +104,6 @@ document
         });
     }
   });
+
+
+//affichage des bookings à l'ouverture de la page bookings
