@@ -48,14 +48,14 @@ document.querySelector("#btn-search").addEventListener("click", function () {
       document.querySelector("#content-right").innerHTML = ``; //on supprime le contenu du bloc de droite
       if (data.trips.length) {
         for (let i = 0; i < data.trips.length; i++) {
-          const hour = new Date(data.trips[i].date).getUTCHours();
-          const minute = new Date(data.trips[i].date).getUTCMinutes();
+          const hours = new Date(data.trips[i].date).getUTCHours();
+          const minutes = new Date(data.trips[i].date).getUTCMinutes();
 
           document.querySelector("#content-right").innerHTML += `
                 <div class="trip">
                     <p>${data.trips[i].departure} > ${data.trips[i].arrival}</p>
-                    <p>${String(hour).padStart(2, "0")}:${String(
-            minute
+                    <p>${String(hours).padStart(2, "0")}:${String(
+            minutes
           ).padStart(2, "0")}</p>
                     <p>${data.trips[i].price}€</p>
                     <input class="pointer" type="button" value="Book" data-tripid=${
