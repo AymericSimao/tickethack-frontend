@@ -626,7 +626,7 @@ select {
   grid-template-rows: repeat(9, 1fr);
   background-color: rgb(224, 220, 214);
   border-radius: 5px;
-  height: 50px;
+  height: 60px;
   width: 80%;
   margin: 5px;
   padding: 5px 20px;
