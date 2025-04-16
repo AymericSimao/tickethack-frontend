@@ -144,7 +144,8 @@ h1 {
   align-items: flex-end;
 }
 
-input {
+input,
+select {
   background-color: rgb(221, 221, 221);
   border-radius: 10px;
   border: none;
@@ -252,6 +253,6 @@ input {
   padding: 5px 20px;
 }
 
-#enjoy{
+#enjoy {
   color: green;
 }

@@ -29,6 +29,30 @@ async function initiateView() {
     console.log(`No cartId found. Initiating a new one`);
     cartId = await initiateNewCart();
   }
+  // Load city lists
+  fetch(`${BACKEND_URL}/trips/city`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      // Departure
+      document.querySelector(
+        "#departure"
+      ).innerHTML = `<option value="--">--</option>`;
+      for (city of data.departure) {
+        document.querySelector(
+          "#departure"
+        ).innerHTML += `<option value="${city}">${city}</option>`;
+      }
+      // Arrival
+      document.querySelector(
+        "#arrival"
+      ).innerHTML = `<option value="--">--</option>`;
+      for (city of data.arrival) {
+        document.querySelector(
+          "#arrival"
+        ).innerHTML += `<option value="${city}">${city}</option>`;
+      }
+    });
 }
 
 initiateView();

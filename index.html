@@ -9,7 +9,11 @@
   <body>
     <div id="index-container" class="container">
       <div id="header">
-        <a href="index.html" style="text-decoration:none"><h2 id="title-logo" href="index.html" class="pointer">TicketHack</h2></a>
+        <a href="index.html" style="text-decoration: none"
+          ><h2 id="title-logo" href="index.html" class="pointer">
+            TicketHack
+          </h2></a
+        >
         <div id="onglets">
           <a href="cart.html">Cart</a>
           <a href="bookings.html">Bookings</a>
@@ -25,15 +29,9 @@
       </div>
       <div id="content-left">
         <div id="destination">
-          <input
-            id="departure"
-            class="pointer"
-            type="text"
-            ,
-            value="Bruxelles"
-          />
+          <select id="departure" name="arrival"></select>
           <hr color="#000000" width="90%" size="1px" />
-          <input id="arrival" class="pointer" type="text" value="Marseille" />
+          <select id="arrival" name="arrival"></select>
         </div>
         <input class="pointer" id="date" type="date" value="2025-04-23" />
         <input class="pointer" id="btn-search" type="button" value="Search" />
