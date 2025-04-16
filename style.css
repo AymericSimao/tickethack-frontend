@@ -7,7 +7,7 @@ body {
 
 input[type="button"] {
   color: white;
-  background-color: green;
+  background-color: #4fab91;
   border: none;
   border-radius: 10px;
   padding: 10px;
@@ -31,12 +31,20 @@ input[type="button"] {
   grid-column-end: 13;
   display: flex;
   justify-content: space-between;
-  background-color: white;
+  background-color: #2d2119;
 }
-
+a#title {
+  display: flex;
+}
+#logo {
+  font-size: 30px;
+  color: #fee8c5;
+  height: 80px;
+  margin-left: 10px;
+}
 #title-logo {
   font-size: 30px;
-  color: rgb(18, 131, 18);
+  color: #fee8c5;
   margin-left: 10px;
 }
 
@@ -52,7 +60,7 @@ input[type="button"] {
   color: black;
   position: relative;
   padding: 10px;
-  background-color: rgb(221, 221, 221);
+  background-color: #fee8c5;
   border-radius: 5px;
 }
 
@@ -68,6 +76,7 @@ input[type="button"] {
   display: none;
   justify-content: center;
   align-items: center;
+  padding: 3px;
 }
 
 /* INDEX STYLE */
@@ -134,7 +143,7 @@ input[type="button"] {
 }
 
 .trip {
-  background-color: gainsboro;
+  background-color: rgb(221, 221, 221);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,7 +215,7 @@ select {
   justify-content: space-around;
   align-items: center;
   color: white;
-  background-color: rgb(0, 7, 71);
+  background-color: #2d2119;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -315,5 +324,5 @@ select {
 }
 
 #enjoy {
-  color: green;
+  color: #4fab91;
 }
