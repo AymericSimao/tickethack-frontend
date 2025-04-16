@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 * {
   padding: 0;
   margin: 0;
@@ -283,18 +281,342 @@ select {
   overflow: auto;
 }
 
-/* TEST pour centrer dans chaque trip les éléments en grid */
-/* .booking-trip {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.booking-trip {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
   background-color: rgb(224, 220, 214);
   border-radius: 5px;
   height: 50px;
   width: 80%;
   margin: 5px;
   padding: 5px 20px;
-} */
+}
+
+.dep-arr {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  display: flex;
+  justify-content: center;
+}
+
+.dep-date {
+  grid-column-start: 4;
+  grid-column-end: 7;
+  display: flex;
+  justify-content: center;
+}
+.before {
+  grid-column-start: 7;
+  grid-column-end: 10;
+  display: flex;
+  justify-content: center;
+}
+#booking-elements > h2 {
+  margin-top: 10px;
+}
+
+#yet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#enjoy {
+  color: #4fab91;
+  margin: 10px;
+}
+
+
+
+
+/*////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////*/
+/*MOBILE : RESPONSIVE DESIGN max 1000px de large*/
+@media only screen and (max-width:900px){
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    background-color: gainsboro;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  input[type="button"] {
+    color: white;
+    background-color: #4fab91;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .container {
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  /* HEADER STYLE */
+  #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2119;
+  }
+  a#title {
+    display: flex;
+    align-items: center;
+  }
+  #logo {
+    font-size: 30px;
+    color: #fee8c5;
+    height: 80px;
+    margin-left: 10px;
+  }
+  #title-logo {
+    font-size: 20px;
+    display: none;
+    color: #fee8c5;
+    margin-left: 10px;
+  }
+  
+  #onglets {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  #onglets > a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding: 10px;
+    background-color: #fee8c5;
+    border-radius: 5px;
+  }
+  
+  #trip-count {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    height: 1rem;
+    width: 1rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+  }
+  
+  /* INDEX STYLE */
+  
+  #index-container {
+    background-image: url("./images/background.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  #intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    color: white;
+    text-align: center;
+  }
+
+  #intro > h2{
+    display: none;
+  }
+  
+  #content-left {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: auto;
+    margin: 20px;
+  }
+  
+  #content-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    overflow: auto;
+    padding: 10px;
+    margin: 20px;
+  }
+  
+  #destination {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #date {
+    display: flex;
+    align-items: center;
+  }
+  
+  #content-right > img {
+    width: 50%;
+    height: 50%;
+    margin: 20px;
+  }
+  
+  #content-right > hr {
+    margin: 20px;
+  }
+  
+  .trip {
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .trip > p {
+    margin-right: 10px;
+  }
+  
+  h1 {
+    font-size: 30px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  #btn-search {
+    margin-top: 50px;
+  }
+  
+  #content-left > #btn-search {
+    align-items: flex-end;
+  }
+  
+  input,
+  select {
+    background-color: rgb(221, 221, 221);
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+  }
+  
+  #date {
+    margin-top: 40px;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
+  
+/* CART STYLE */
+#cart-content {
+  grid-row-start: 4;
+  grid-row-end: 11;
+  grid-column-start: 2;
+  grid-column-end: 12;
+  background-color: white;
+  border-radius: 20px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+#cart-elements {
+  grid-row-start: 1;
+  grid-row-end: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+}
+#cart-total {
+  grid-row-start: 5;
+  grid-row-end: 6;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-color: #2d2119;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#cart-total > p {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+}
+
+#cart-total > input {
+  margin: 5px;
+  padding: 5px;
+  width: 100px;
+  height: 50%;
+}
+
+.cart-trip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(224, 220, 214);
+  border-radius: 5px;
+  height: 50px;
+  width: 90%;
+  margin: 5px;
+  padding: 5px 10px;
+}
+.cart-trip > input{
+  margin: 5px;
+}
+
+/* BOOKING STYLE */
+#booking-content {
+  grid-row-start: 4;
+  grid-row-end: 11;
+  grid-column-start: 2;
+  grid-column-end: 12;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+#booking-elements {
+  grid-row-start: 1;
+  grid-row-end: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+}
+
 .booking-trip {
   height: 100vh;
   width: 100vw;
@@ -340,4 +662,5 @@ select {
 
 #enjoy {
   color: #4fab91;
+}
 }
