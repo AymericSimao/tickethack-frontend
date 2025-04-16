@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-*{
+* {
   padding: 0;
   margin: 0;
 }
@@ -150,7 +150,8 @@ a#title {
   height: 50%;
   margin: 20px;
 }
-#content-right > hr{
+
+#content-right > hr {
   margin: 20px;
 }
 
