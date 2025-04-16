@@ -509,6 +509,9 @@ select {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   }
+  select{
+    height: 50px;
+  }
   
   #btn-search {
     margin-top: 50px;
