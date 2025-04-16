@@ -38,10 +38,12 @@ input[type="button"] {
   grid-column-end: 13;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #2d2119;
 }
 a#title {
   display: flex;
+  align-items: center;
 }
 #logo {
   font-size: 30px;
